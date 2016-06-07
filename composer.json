@@ -1,0 +1,8 @@
+{
+    "require": {
+        "elasticsearch/elasticsearch": "~2.0",
+		"longman/telegram-bot": "*",
+		"php": ">=7",
+		"ext-mbstring": "*"
+    }
+}
