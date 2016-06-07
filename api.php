@@ -20,10 +20,10 @@ class SiteSearch
 
     public function __construct($query = null, array $argv = null)
     {
-        $this->client = ClientBuilder::create()->build();
+        
         $this->index = "mpt";
         $this->type = "news";
-
+		$this->connect();
 
         if (!empty($argv)) {
             $this->argv = array_flip($argv);
@@ -34,6 +34,16 @@ class SiteSearch
             $this->search($query);
         }
     }
+	
+	private function connect()
+	{
+		$hosts = [
+			'195.128.125.243:9200',         // IP + Port
+		];
+		$this->client = ClientBuilder::create()
+		->setHosts($hosts)
+		->build();
+	}
 
     private function search($query)
     {
