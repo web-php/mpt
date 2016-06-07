@@ -80,7 +80,7 @@ class SearchCommand extends UserCommand
 		$out = "";
 		foreach($response['hits']['hits'] as $news){
 			$out .= 
-			"<a href=http://minpromtorg.gov.ru/press-centre/news/#!".$news['_source']['URL_ALIAS'].">".$news['_source']['TITLE']."</a>
+			"<a href=\"http://minpromtorg.gov.ru/press-centre/news/#!".$news['_source']['URL_ALIAS']."\">".$news['_source']['TITLE']."</a>
 			";
 		}
 		return $out; //"<pre>".print_r($response,true)."</pre>";
