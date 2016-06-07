@@ -42,6 +42,7 @@ class SearchCommand extends UserCommand
         $data = [];
         $data['chat_id'] = $chat_id;
 		$data['parse_mode'] = 'HTML';
+		$data['disable_web_page_preview'] = false;
         $data['text'] = $message->getText(true) ? $this->executeSearch($message->getText(true)) : 'Для поиска введите /search что ищем';
 
         return Request::sendMessage($data);
@@ -81,6 +82,7 @@ class SearchCommand extends UserCommand
 		$arr = array_reverse($response['hits']['hits']);
 		foreach($arr as $news){
 			$out .= '<a href="http://minpromtorg.gov.ru/press-centre/news/#!'.$news['_source']['NEWS_ID'].'">'.trim($news['_source']['TITLE']).'</a>
+
 ';
 		}
 		return $out; 
