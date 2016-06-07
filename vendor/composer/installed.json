@@ -192,17 +192,17 @@
     },
     {
         "name": "elasticsearch/elasticsearch",
-        "version": "v2.1.5",
-        "version_normalized": "2.1.5.0",
+        "version": "v2.2.0",
+        "version_normalized": "2.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/elastic/elasticsearch-php.git",
-            "reference": "c1675245c0a6f789cbb80b3e0b333b9ef521a627"
+            "reference": "11ebdf2c847d0e2c4a47ac993485beb5a19d5dc4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/c1675245c0a6f789cbb80b3e0b333b9ef521a627",
-            "reference": "c1675245c0a6f789cbb80b3e0b333b9ef521a627",
+            "url": "https://api.github.com/repos/elastic/elasticsearch-php/zipball/11ebdf2c847d0e2c4a47ac993485beb5a19d5dc4",
+            "reference": "11ebdf2c847d0e2c4a47ac993485beb5a19d5dc4",
             "shasum": ""
         },
         "require": {
@@ -211,10 +211,10 @@
             "psr/log": "~1.0"
         },
         "require-dev": {
-            "athletic/athletic": "~0.1",
             "cpliakas/git-wrapper": "~1.0",
             "mockery/mockery": "0.9.4",
             "phpunit/phpunit": "~4.7",
+            "sami/sami": "~3.2",
             "symfony/yaml": "2.4.3 as 2.4.2",
             "twig/twig": "1.*"
         },
@@ -222,7 +222,7 @@
             "ext-curl": "*",
             "monolog/monolog": "Allows for client-level logging and tracing"
         },
-        "time": "2016-03-18 16:31:37",
+        "time": "2016-06-03 21:09:29",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -232,7 +232,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "Apache 2"
+            "Apache-2.0"
         ],
         "authors": [
             {
@@ -247,30 +247,111 @@
         ]
     },
     {
-        "name": "longman/telegram-bot",
-        "version": "0.32",
-        "version_normalized": "0.32.0.0",
+        "name": "monolog/monolog",
+        "version": "1.19.0",
+        "version_normalized": "1.19.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/akalongman/php-telegram-bot.git",
-            "reference": "e5b6d415f94afd664dae1239062f1145467e44d7"
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/akalongman/php-telegram-bot/zipball/e5b6d415f94afd664dae1239062f1145467e44d7",
-            "reference": "e5b6d415f94afd664dae1239062f1145467e44d7",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+            "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "^2.4.9",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "jakub-onderka/php-parallel-lint": "0.9",
+            "php-amqplib/php-amqplib": "~2.4",
+            "php-console/php-console": "^3.1.3",
+            "phpunit/phpunit": "~4.5",
+            "phpunit/phpunit-mock-objects": "2.3.0",
+            "raven/raven": "^0.13",
+            "ruflin/elastica": ">=0.90 <3.0",
+            "swiftmailer/swiftmailer": "~5.3"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+            "php-console/php-console": "Allow sending log messages to Google Chrome",
+            "raven/raven": "Allow sending log messages to a Sentry server",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+        },
+        "time": "2016-04-12 18:29:35",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "longman/telegram-bot",
+        "version": "0.33",
+        "version_normalized": "0.33.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/akalongman/php-telegram-bot.git",
+            "reference": "0ebd95c40797ffff2faefd58e3734ca905f1606b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/akalongman/php-telegram-bot/zipball/0ebd95c40797ffff2faefd58e3734ca905f1606b",
+            "reference": "0ebd95c40797ffff2faefd58e3734ca905f1606b",
             "shasum": ""
         },
         "require": {
             "ext-curl": "*",
             "ext-pdo": "*",
+            "monolog/monolog": "^1.19",
             "php": ">=5.5.0"
         },
         "require-dev": {
             "phpunit/phpunit": "~4.8",
             "squizlabs/php_codesniffer": "~2.5"
         },
-        "time": "2016-05-13 17:59:55",
+        "time": "2016-05-29 14:42:56",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

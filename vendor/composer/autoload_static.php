@@ -15,6 +15,10 @@ class ComposerStaticInit880aa4af0a289075afa2ec967d64c2ef
         array (
             'React\\Promise\\' => 14,
         ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
         'L' => 
         array (
             'Longman\\TelegramBot\\' => 20,
@@ -34,6 +38,10 @@ class ComposerStaticInit880aa4af0a289075afa2ec967d64c2ef
         'React\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Longman\\TelegramBot\\' => 
         array (
