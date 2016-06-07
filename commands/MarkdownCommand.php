@@ -40,10 +40,8 @@ class MarkdownCommand extends UserCommand
         $data = [];
         $data['chat_id'] = $chat_id;
         $data['parse_mode'] = 'MARKDOWN';
-        $data['text'] = "*bold* _italic_ `inline fixed width code` ```preformatted code block
-code block
-```
-[Best Telegram bot api!!](https://github.com/akalongman/php-telegram-bot)
+        $data['text'] = "
+[minpromtorg](http://minpromtorg.gov.ru/)
 
 ";
 
