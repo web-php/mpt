@@ -1,5 +1,5 @@
 <?php
-ini_set("always_populate_raw_post_data", 1); 
+ini_set("always_populate_raw_post_data", -1); 
 // Load composer
 require __DIR__ . '/vendor/autoload.php';
 
