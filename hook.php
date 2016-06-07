@@ -2,7 +2,7 @@
 // Load composer
 require __DIR__ . '/vendor/autoload.php';
 
-$API_KEY = '209003069:AAHvbUfTNpDy-GEsnwp_6MiOu_LaZJBbvuc';
+$API_KEY = '208257219:AAHaylq9HW7Xo2EhbB4fKHU0PqBJwWD1SvI';
 $BOT_NAME = 'minpromtorg_bot';
 $commands_path = "commands/";
 try {
