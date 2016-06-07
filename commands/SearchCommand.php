@@ -76,6 +76,12 @@ class SearchCommand extends UserCommand
         ];
 		
 		$response = $this->client->search($params);
-		return print_r($response,true);
+		$out = "";
+		foreach($response['hits']['hits'] as $news){
+			$out .= "
+			*bold ".$news['_source']['TITLE']."*
+			";
+		}
+		return $out."<pre>".print_r($response,true)."</pre>";
 	}
 }
