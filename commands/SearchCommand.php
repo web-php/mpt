@@ -36,9 +36,11 @@ class SearchCommand extends UserCommand
         $message = $this->getMessage();
         $chat_id = $message->getChat()->getId();
 
+		$text = isset($argv[2]) ? $argv[2] : 'Для поиска введите /search что ищем';
+		
         $data = [];
         $data['chat_id'] = $chat_id;
-        $data['text'] = 'Начать поиск:';
+        $data['text'] = $text;
 
         return Request::sendMessage($data);
     }
