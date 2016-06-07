@@ -13,6 +13,7 @@ namespace Longman\TelegramBot\Commands\UserCommands;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Entities\ForceReply;
+use Elasticsearch\ClientBuilder;
 
 /**
  * User "/search" command
@@ -40,8 +41,41 @@ class SearchCommand extends UserCommand
 		
         $data = [];
         $data['chat_id'] = $chat_id;
-        $data['text'] = $message->getText(true) ? : 'Для поиска введите /search что ищем';
+        $data['text'] = $message->getText(true) ? $this->executeSearch($message->getText(true)) : 'Для поиска введите /search что ищем';
 
         return Request::sendMessage($data);
     }
+	
+	private function executeSearch($query)
+	{
+		$hosts = [
+			'195.128.125.243:9200',         // IP + Port
+		];
+		$this->index = "mpt";
+        $this->type = "news";
+		$this->client = ClientBuilder::create()
+		->setHosts($hosts)
+		->build();
+		
+		
+		$query = strip_tags($query);
+        $params = [
+            'index' => $this->index,
+            'type' => $this->type,
+            'body' => [
+                'query' => [
+                    'match' => [
+                        'TITLE' => $query,
+                        //"type" => "phrase"
+                    ] , 
+                    
+                ],
+                'size' => 10,
+                //'type' =>  'phrase'
+            ]
+        ];
+		
+		$response = $this->client->search($params);
+		return print_r($response,true);
+	}
 }
