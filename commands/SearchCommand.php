@@ -40,7 +40,7 @@ class SearchCommand extends UserCommand
 		
         $data = [];
         $data['chat_id'] = $chat_id;
-        $data['text'] = $message;
+        $data['text'] = $message->getText(true);
 
         return Request::sendMessage($data);
     }
