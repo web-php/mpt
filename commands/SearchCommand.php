@@ -79,7 +79,9 @@ class SearchCommand extends UserCommand
 		$response = $this->client->search($params);
 		$out = "";
 		foreach($response['hits']['hits'] as $news){
-			$out .= "<a href=http://minpromtorg.gov.ru/press-centre/news/#!".$news['_source']['URL_ALIAS'].">".$news['_source']['TITLE']."</a>";
+			$out .= 
+			"<a href=http://minpromtorg.gov.ru/press-centre/news/#!".$news['_source']['URL_ALIAS'].">".$news['_source']['TITLE']."</a>
+			";
 		}
 		return $out; //"<pre>".print_r($response,true)."</pre>";
 	}
